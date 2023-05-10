@@ -1,5 +1,5 @@
-# Peridot
-Peridot is a productivity app designed for individuals with ADHD and inattentiveness. It aims to provide personalized support and tools for managing distractions and staying focused. The app includes a to-do list, calendar, and AI-powered personal assistant.
+# MyndMap
+MyndMap is a productivity app designed for individuals with ADHD and inattentiveness. It aims to provide personalized support and tools for managing distractions and staying focused. The app includes a to-do list, calendar, and AI-powered personal assistant.
 
 # Features
 --- ---
