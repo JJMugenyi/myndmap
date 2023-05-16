@@ -8,7 +8,11 @@ Contains the relevant HTML code. Other assests can be found in their respective 
 
 # To-do 
 Complete Testimonials text formatting.
+
 Complete 'Team' Section (Colours, Text, Social Links)
+
 Complete FAQ Section
+
 Complete Links between 'Log In' and 'Sign Up' pages
-Comlete footers for each page (logo change)
+
+Complete footers for each page (logo change)
