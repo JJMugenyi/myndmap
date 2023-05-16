@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
 :root {
-  --font: "Inter", sans-serif;
+  --font: "Open Sans", sans-serif;
   --body-color: #637381;
   --heading-color: #212b36;
   --primary-color: #1a1a1a;
@@ -203,11 +203,9 @@ p {
 .sticky {
   position: fixed;
   z-index: 99;
-  background-color: rgba(1247, 232, 211, 0.8);
+  background-color: rgba(255, 232, 211, 0.8);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  -webkit-box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
@@ -444,15 +442,15 @@ p {
 }
 
 .navbar-btn .ud-login-btn:hover {
-  opacity: 0.5;
+  color: #efd1a8;
+  opacity: 1;
 }
 
 .navbar-btn .ud-white-btn {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .navbar-btn .ud-white-btn:hover {
-  background: white;
   color: var(--heading-color);
 }
 
@@ -461,7 +459,7 @@ p {
 }
 
 .sticky .navbar-nav .nav-item:hover > a {
-  color: var(--primary-color);
+  color: #ffffff;
   opacity: 1;
 }
 
