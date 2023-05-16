@@ -1,15 +1,3 @@
-/* =======
-
-	Template Name: Play Bootstrap
-	Author: UIdeck
-	Author URI: https://uideck.com/
-	Support: https://github.com/uideck/
-	Version: 1.0
-
-======== */
-/*===========================
-  COMMON css 
-===========================*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
 :root {
   --font: "Inter", sans-serif;
@@ -864,9 +852,10 @@ p {
 }
 
 .ud-about-content .ud-main-btn:hover {
-  background: #2748b4;
+  background: #ffffff;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+          color: #1a1a1a;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
@@ -976,15 +965,15 @@ p {
 }
 
 .ud-single-pricing .ud-border-btn {
-  border: 1px solid #d4deff;
-  color: var(--primary-color);
-  background: var(--white);
+  border: 1px solid #1a1a1a;
+  color: #ffffff;
+  background: #1a1a1a;
 }
 
 .ud-single-pricing .ud-border-btn:hover {
-  color: var(--white);
+  color: #1a1a1a;
   border-color: var(--primary-color);
-  background: var(--primary-color);
+  background: #ffffff;
 }
 
 .ud-single-pricing .ud-white-btn {
