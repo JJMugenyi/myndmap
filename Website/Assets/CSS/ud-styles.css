@@ -696,6 +696,40 @@ p {
   }
 }
 
+.ud-section-title-w {
+  max-width: 620px;
+  margin-bottom: 70px;
+}
+
+.ud-section-title-w span {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.ud-section-title-w h2 {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 55px;
+  text-transform: capitalize;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.ud-section-title-w p {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+@media (max-width: 767px) {
+  .ud-section-title-w p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+
 .ud-single-feature {
   margin-bottom: 40px;
 }
