@@ -439,19 +439,21 @@ p {
 .navbar-btn .ud-main-btn {
   padding: 8px 16px;
   background: transparent;
+  
 }
 
 .navbar-btn .ud-login-btn:hover {
-  color: #efd1a8;
+  color: #ff8d40;
   opacity: 1;
 }
 
 .navbar-btn .ud-white-btn {
-  background: rgba(255, 255, 255, 0.55);
+  background: #ffffff;
+  color: #1a1a1a;
 }
 
 .navbar-btn .ud-white-btn:hover {
-  color: var(--heading-color);
+  color: #1a1a1a;
 }
 
 .sticky .navbar-toggler .toggler-icon {
@@ -459,16 +461,16 @@ p {
 }
 
 .sticky .navbar-nav .nav-item:hover > a {
-  color: #ffffff;
+  color: #1a1a1a;
   opacity: 1;
 }
 
 .sticky .navbar-nav .nav-item a {
-  color: var(--heading-color);
+  color: #1a1a1a;
 }
 
 .sticky .navbar-nav .nav-item a.active, .sticky .navbar-nav .nav-item a:hover {
-  color: var(--primary-color);
+  color: #ff8d40;
   opacity: 1;
 }
 
@@ -477,17 +479,18 @@ p {
 }
 
 .sticky .navbar-btn .ud-main-btn.ud-login-btn:hover {
-  color: var(--primary-color);
+  color: #ff8d40;
   opacity: 1;
 }
 
 .sticky .navbar-btn .ud-white-btn {
-  background: var(--primary-color);
-  color: var(--white);
+  background: #1a1a1a;
+  color: #ffffff;
 }
 
 .sticky .navbar-btn .ud-white-btn:hover {
-  background: var(--heading-color);
+  background: #ffffff;
+  color: #1a1a1a;
 }
 
 /* ===== Hero CSS ===== */
@@ -879,7 +882,7 @@ p {
 .ud-single-pricing {
   margin-bottom: 40px;
   background: var(--white);
-  border: 2px solid #d4deff;
+  border: 2px solid #1a1a1a;
   border-radius: 8px;
   text-align: center;
   padding: 45px 30px;
@@ -887,8 +890,8 @@ p {
 }
 
 .ud-single-pricing.active {
-  background: -webkit-gradient(linear, left top, left bottom, from(#3056d3), to(#179bee));
-  background: linear-gradient(180deg, #3056d3 0%, #179bee 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff8d40), to(#1a1a1a));
+  background: linear-gradient(180deg, #ff8d40 0%, #ff8d40 100%);
   border: none;
   padding: 55px 30px;
 }
@@ -918,7 +921,7 @@ p {
 }
 
 .ud-single-pricing.last-item::after {
-  background: #13c296;
+  background: #ff8d40;
   top: -2px;
   right: -2px;
   border-radius: 0px 8px 0px 55px;
@@ -1251,6 +1254,7 @@ p {
 .ud-single-team .ud-team-info {
   text-align: center;
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .ud-single-team .ud-team-info h5 {
@@ -1258,12 +1262,13 @@ p {
   font-size: 18px;
   text-transform: capitalize;
   margin-bottom: 10px;
+  color: #f7e8d3;
 }
 
 .ud-single-team .ud-team-info h6 {
   font-weight: 500;
   font-size: 12px;
-  color: var(--body-color);
+  color: #ffffff;
 }
 
 .ud-single-team .ud-team-socials {
@@ -1295,7 +1300,7 @@ p {
 }
 
 .ud-single-team .ud-team-socials a:hover {
-  color: var(--primary-color);
+  color: #f7e8d3;
 }
 
 /* ===== Contact CSS ===== */
