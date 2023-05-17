@@ -6,6 +6,8 @@ Contains the relevant HTML code. Other assests can be found in their respective 
 --- ---
 16/05/2023 - Base Website is created: Colour Science, Figma prototype displayed on load
 
+17/05/2023 - Uploaded a front page.png as the first of many iterations. 
+
 # To-do 
 Complete Testimonials text formatting.
 
