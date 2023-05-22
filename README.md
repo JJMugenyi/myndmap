@@ -6,7 +6,7 @@ MyndMap is a productivity app designed for individuals with ADHD and inattentive
 
 
 # Tech Stack
-Flask - Front-end Framework
+Flask - Back-end Framework
 
 # Contributing
 We welcome contributions from the community! Please follow these steps to make a contribution:
