@@ -8,7 +8,7 @@ MyndMap is a web application designed to help individuals with ADHD improve thei
 
 - **Personalized AI Assistance**: MyndMap uses advanced AI algorithms to adapt to each user's specific needs, providing tailored strategies and recommendations for improving focus and productivity.
 
-- **ADHD Assessment**: The application includes a comprehensive ADHD assessment based on the DSM-5 criteria. Users can complete the assessment to gauge the severity of their symptoms and receive personalized recommendations.
+- **ADHD Assessment**: The application includes a comprehensive ADHD assessment based on the DSM-5 criteria. Users can complete the assessment to gauge the severity of their struggles and receive personalised recommendations.
 
 - **Task Organization and Reminders**: MyndMap helps users organize their tasks and provides reminders to stay on track. It allows users to set priorities, deadlines, and track their progress.
 
@@ -78,6 +78,14 @@ git push origin feature/my-feature
 5. Open a pull request on the main repository.
 
 Please ensure that your contributions adhere to the project's coding guidelines and standards.
+
+## Roadmap
+
+The following features and enhancements are planned for future releases of MyndMap:
+
+- Integration with calendar and task management applications
+
+- Gamification elements to increase user engagement
 
 ## License
 
