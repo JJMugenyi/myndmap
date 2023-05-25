@@ -1,4 +1,4 @@
-![MyndMap Logo](Website/Front Page 2.png)
+![MyndMap Logo](Website/Front%20Page%202.png)
 
 # MyndMap
 
