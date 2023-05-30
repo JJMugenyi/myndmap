@@ -18,44 +18,7 @@ MyndMap is a web application designed to help individuals with ADHD improve thei
 
 ## Installation
 
-To install and run MyndMap locally, follow these steps:
-
-1. Clone the repository:
-
-git clone https://github.com/your-username/myndmap.git
-
-
-2. Navigate to the project directory:
-
-cd myndmap
-
-
-3. Install the required dependencies:
-
-pip install -r requirements.txt
-
-
-4. Set up the database:
-
-- Create a MySQL database and update the database credentials in the `config.py` file.
-
-- Run the database migration commands:
-
-  ```
-  flask db init
-  flask db migrate
-  flask db upgrade
-  ```
-
-5. Start the Flask development server:
-
-flask run
-
-
-6. Access MyndMap in your web browser:
-
-http://localhost:5000
-
+Frameworks - TBD
 
 ## Contributing
 
