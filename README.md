@@ -16,9 +16,14 @@ MyndMap is a web application designed to help individuals with ADHD improve thei
 
 - **User Profiles**: Users can create profiles to customize their MyndMap experience. They can track their progress, view analytics, and access personalized recommendations.
 
-## Installation
+## Frameworks
 
-Frameworks - TBD
+Frontend - React
+
+Backend - Django
+
+These are desired, and have not yet been implemented.
+
 
 ## Contributing
 
