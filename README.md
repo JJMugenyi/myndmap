@@ -20,7 +20,7 @@ MyndMap is a web application designed to help individuals with ADHD improve thei
 
 Frontend - React
 
-Backend - Django
+Backend - Flask
 
 These are desired, and have not yet been implemented.
 
