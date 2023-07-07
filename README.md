@@ -1,5 +1,7 @@
 ![MyndMap Logo](Website/Front%20Page%202.png)
 
+MyndMap is still in early development and is not ready for use yet.
+
 # MyndMap
 
 MyndMap is a web application designed to help individuals with ADHD improve their focus and productivity. It leverages AI technology to adapt to each user's unique needs and provide personalized assistance. This README provides comprehensive documentation for MyndMap, including its features, installation instructions, how to contribute, and licensing information.
