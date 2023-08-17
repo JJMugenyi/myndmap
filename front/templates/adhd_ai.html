@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Test</title>
+
+      <!--====== Favicon Icon ======-->
+      <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/favicon.png') }}"
+      type="image/png"
+    />
+
+  <!-- ===== All CSS & JS files ===== -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/ud-styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/lineicons.css') }}">
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+    .container {
+      text-align: center;
+      color: #F7E8D3;
+      opacity: 0; /* Set initial opacity to 0 for fade-in effect */
+      animation: fadeIn 2s forwards; /* Apply animation */
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1; /* Fade in to full opacity */
+      }
+    }
+    .paragraph {
+      font-size: 1.2em;
+      margin: 20px 0;
+      color: #FFFFFF; /* White text */
+      text-align: left; /* Align text to the left */
+    }
+    .caption {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #F7E8D3;
+      font-weight: bold;
+    }
+    .scale {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2em;
+      color: #F7E8D3;
+      margin-top: 10px;
+    }
+    .number {
+      width: 40px;
+      height: 40px;
+      border: 2px solid #F7E8D3;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .number.selected {
+      background-color: #F7E8D3;
+      color: #1a1a1a;
+    }
+    .circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 2px solid #F7E8D3;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+    }
+    .beta {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 12px;
+      color: #777; /* Gray color */
+    }
+
+    /* Added styles for the button */
+    .next-button {
+      background-color: #F7E8D3;
+      color: #1a1a1a;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+      margin-top: 20px;
+      display: none;
+      opacity: 0; /* Set initial opacity to 0 for fade-in effect */
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .next-button:hover {
+      background-color: #efd1a8;
+    }
+    .next-button.show {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p class="paragraph">
+      I find it extremely challenging to concentrate on a single task for an extended period of time without my mind wandering.<br>
+      Staying organized, neat, and remembering appointments is very difficult for me.<br>
+      I tend to fidget constantly and cannot sit still for long.<br>
+      I also struggle to control my impulses and often act or speak without thinking first.<br>
+      Even small tasks feel daunting and I procrastinate frequently because getting motivated is a challenge.
+    </p>
+    <p class="caption">To what extent do you agree with this?</p>
+    <div class="scale">
+      <span>Strongly Disagree</span>
+      <div class="circle number">1</div>
+      <div class="circle number">2</div>
+      <div class="circle number">3</div>
+      <div class="circle number">4</div>
+      <div class="circle number">5</div>
+      <span>Strongly Agree</span>
+    </div>
+    <button class="next-button">Next</button>
+    <p class="beta">Beta Version 1.0</p>
+  </div>
+  <script>
+    const numbers = document.querySelectorAll('.number');
+    const nextButton = document.querySelector('.next-button');
+
+    numbers.forEach(number => {
+      number.addEventListener('click', () => {
+        numbers.forEach(num => num.classList.remove('selected'));
+        number.classList.add('selected');
+        nextButton.classList.add('show');
+        nextButton.style.opacity = 1;
+      });
+    });
+  </script>
+</body>
+</html>

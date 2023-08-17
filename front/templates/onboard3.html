@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyndMap</title>
+
+  <!--====== Favicon Icon ======-->
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='images/favicon.png') }}"
+    type="image/png"
+  />
+
+  <!-- ===== All CSS & JS files ===== -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/ud-styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/lineicons.css') }}">
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+    .container {
+      text-align: center;
+      color: #F7E8D3;
+      opacity: 0; /* Set initial opacity to 0 for fade-in effect */
+      animation: fadeIn 2s forwards; /* Apply animation */
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1; /* Fade in to full opacity */
+      }
+    }
+    .header {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #F7E8D3;
+    }
+    .caption {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #F7E8D3;
+    }
+    .button {
+      background-color: #F7E8D3;
+      color: #1a1a1a;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+      text-decoration: none;
+    }
+    .button:hover {
+      background-color: #efd1a8;
+      color: #1a1a1a;
+    }
+    .beta {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="header">Unleash Your Focus.</h1>
+    <p class="caption">Are you ready to embark on your journey to productivity?</p>
+    <a href="/adhd_ai" class="button">Get Started</a>
+    <p class="beta">Beta Version 1.0</p>
+  </div>
+</body>
+</html>
