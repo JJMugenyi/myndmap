@@ -93,259 +93,125 @@
     <!-- ====== Banner End ====== -->
 
     <!-- ====== Login Start ====== -->
-    <section class="ud-login">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="ud-login-wrapper">
-              <div class="ud-login-logo">
-                <img src="{{ url_for('static', filename='images/logo/color.svg') }}" alt="logo" />
-              </div>
-              <form class="ud-login-form">
-                <div class="ud-form-group">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                  />
-                </div>
-                <div class="ud-form-group">
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="*********"
-                  />
-                </div>
-                <div class="ud-form-group">
-                  <a href = "/onboard" class="ud-main-btn w-100">Create Your Account</button>
-                </div>
-              </form>
+<section class="ud-login">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="ud-login-wrapper">
+          <div class="ud-login-logo">
+            <img src="{{ url_for('static', filename='images/logo/color.svg') }}" alt="logo" />
+          </div>
+          <form class="ud-login-form">
+            <div class="ud-form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+              />
+            </div>
+            <div class="ud-form-group">
+              <input
+                type="password"
+                name="password"
+                placeholder="*********"
+              />
+            </div>
+            <div class="ud-form-group">
+              <a href="/onboard" class="ud-main-btn w-100">Create Your Account</a>
+            </div>
+            <p class="signup-option">
+              Already a member? <a href="/login"> Log In </a>
+            </p>
+          </form>
+          <a class="forget-pass" href="/forgot">
+            Forget Password?
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ====== Login End ====== -->
 
-              <a class="forget-pass" href="/forgot">
-                Forget Password?
-              </a>
-              <p class="signup-option">
-                Already a member? <a href="/login"> Log In </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ====== Login End ====== -->
 
-    <!-- ====== Footer Start ====== -->
-    <footer class="ud-footer wow fadeInUp" data-wow-delay=".15s">
-      <div class="shape shape-1">
-        <img src="assets/images/footer/shape-1.svg" alt="shape" />
-      </div>
-      <div class="shape shape-2">
-        <img src="assets/images/footer/shape-2.svg" alt="shape" />
-      </div>
-      <div class="shape shape-3">
-        <img src="assets/images/footer/shape-3.svg" alt="shape" />
-      </div>
-      <div class="ud-footer-widgets">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-3 col-lg-4 col-md-6">
-              <div class="ud-widget">
-                <a href="index.html" class="ud-footer-logo">
-                  <img src="assets/images/logo/myndmap.png" alt="logo" />
-                </a>
-                <p class="ud-widget-desc">
-                  We create digital experiences for brands and companies by
-                  using technology.
-                </p>
-                <ul class="ud-widget-socials">
-                  <li>
-                  </li>
-                  <li>
-                    <a href="https://twitter.com/MyndMapHQ">
-                      <i class="lni lni-twitter-filled"></i>
+        <!-- ====== Footer Start ====== -->
+        <footer class="ud-footer wow fadeInUp" data-wow-delay=".15s">
+          <div class="shape shape-1">
+            <img src="{{ url_for('static', filename='images/footer/shape-1.svg') }}" alt="shape" />
+          </div>
+          <div class="shape shape-2">
+            <img src="{{ url_for('static', filename='images/footer/shape-2.svg') }}" alt="shape" />
+          </div>
+          <div class="shape shape-3">
+            <img src="{{ url_for('static', filename='images/footer/shape-3.svg') }}" alt="shape" />
+          </div>
+          <div class="ud-footer-widgets mx-auto">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                  <div class="ud-widget">
+                    <a href="/" class="ud-footer-logo">
+                      <img src="{{ url_for('static', filename='images/logo/myndmap.png') }}" alt="logo" />
                     </a>
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/myndmaphq/">
-                      <i class="lni lni-instagram-filled"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://uk.linkedin.com/company/myndmap">
-                      <i class="lni lni-linkedin-original"></i>
-                    </a>
-                  </li>
-                </ul>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
-              <div class="ud-widget">
-                <h5 class="ud-widget-title">Features</h5>
-                <ul class="ud-widget-links">
-                  <li>
-                    <a href="javascript:void(0)">How it works</a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Privacy policy</a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Terms of service</a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">Refund policy</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
-              <div class="ud-widget">
-                <h5 class="ud-widget-title">Our Products</h5>
-                <ul class="ud-widget-links">
-                  <li>
-                    <a
-                      href="https://lineicons.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                      >Lineicons
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://ecommercehtml.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                      >Ecommerce HTML</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://ayroui.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                      >Ayro UI</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://graygrids.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                      >Plain Admin</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-8 col-sm-10">
-              <div class="ud-widget">
-                <h5 class="ud-widget-title">Partners</h5>
-                <ul class="ud-widget-brands">
-                  <li>
-                    <a
-                      href="https://ayroui.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                    >
-                      <img
-                        src="assets/images/footer/brands/ayroui.svg"
-                        alt="ayroui"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://ecommercehtml.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                    >
-                      <img
-                        src="assets/images/footer/brands/ecommerce-html.svg"
-                        alt="ecommerce-html"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://graygrids.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                    >
-                      <img
-                        src="assets/images/footer/brands/graygrids.svg"
-                        alt="graygrids"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://lineicons.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                    >
-                      <img
-                        src="assets/images/footer/brands/lineicons.svg"
-                        alt="lineicons"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://uideck.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                    >
-                      <img
-                        src="assets/images/footer/brands/uideck.svg"
-                        alt="uideck"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://tailwindtemplates.co/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                    >
-                      <img
-                        src="assets/images/footer/brands/tailwindtemplates.svg"
-                        alt="tailwindtemplates"
-                      />
-                    </a>
-                  </li>
-                </ul>
+                    <p class="ud-widget-desc">
+                      We create digital experiences for brands and companies by using technology.
+                    </p>
+                    <ul class="ud-widget-socials">
+                      <li>
+                      </li>
+                      <li>
+                        <a href="https://twitter.com/MyndMapHQ">
+                          <i class="lni lni-twitter-filled"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.instagram.com/myndmaphq/">
+                          <i class="lni lni-instagram-filled"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://uk.linkedin.com/company/myndmap">
+                          <i class="lni lni-linkedin-original"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>           
+                      </li>
+                    </ul>
+                  </div>
+                </div>         
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="ud-footer-bottom">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8">
-              <ul class="ud-footer-bottom-left">
-                <li>
-                  <a href="javascript:void(0)">Privacy policy</a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">Support policy</a>
-                </li>
-                <li>
-                  <a href="javascript:void(0)">Terms of service</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <p class="ud-footer-bottom-right">
-                &copy; 2023 MyndMap. All Rights Reserved.
-                <a href="https://uideck.com" rel="nofollow">UIdeck</a>
-              </p>
+          <div class="ud-footer-bottom">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8">
+                  <ul class="ud-footer-bottom-left">
+                    <li>
+                      <a href="/privacy">Privacy policy</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Support policy</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Terms of service</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-4">
+                  <p class="ud-footer-bottom-right">
+                    &copy; 2023 MyndMap. All Rights Reserved.
+                    <a href="https://uideck.com" rel="nofollow">UIdeck</a>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </footer>
-    <!-- ====== Footer End ====== -->
+        </footer>
+        <!-- ====== Footer End ====== -->
 
     <!-- ====== Back To Top Start ====== -->
     <a href="javascript:void(0)" class="back-to-top">

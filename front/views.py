@@ -49,3 +49,13 @@ def onboard3():
 @views.route('/adhd_ai')
 def adhd_ai():
     return render_template('adhd_ai.html')
+
+@views.route('/adhd_ai_2')
+def adhd_ai_2():
+    return render_template('adhd_ai_2.html')
+
+@views.route('/results')
+def results():
+    return render_template('results.html')
+
+

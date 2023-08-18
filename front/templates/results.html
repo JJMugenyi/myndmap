@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Improved Horseshoe Scale with Subtle Zoom Animation</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #1a1a1a;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+    }
+    .text-container {
+      flex: 1;
+      padding: 20px;
+    }
+    .scale-container {
+      position: relative;
+      width: 500px;
+      height: 400px;
+      animation: zoomOut 2s ease-in-out forwards; /* Faster animation */
+    }
+    @keyframes zoomOut {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0.8); /* Adjust the scale value for subtler zoom-out */
+      }
+    }
+    .horseshoe {
+      fill: none;
+      stroke: #F7E8D3;
+      stroke-width: 2;
+    }
+    .axis-label {
+      fill: #F7E8D3;
+      font-size: 14px;
+      text-anchor: middle;
+    }
+    .axis-line {
+      stroke: #F7E8D3;
+      stroke-width: 2;
+    }
+    .fade-in-text {
+      opacity: 0;
+      color: #F7E8D3;
+      font-size: 16px; /* Adjust the font size */
+      text-align: left; /* Align text to the left */
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    .beta-text {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 12px;
+      color: #777; /* Gray color */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="text-container">
+      <div class="fade-in-text">
+        Your base score on our ADHD severity test is 53 - this score falls into the Moderate category.<br><br>
+        Moderate means you experience noticeable ADHD symptoms that affect your daily life to some extent.<br><br>
+        You may have difficulty with:<br>
+        - Staying organized.<br>
+        - Staying focused.<br>
+        - Managing your time effectively.<br><br>
+        With MyndMap's personalised AI system, we can work together to streamline your workflow and increase your productivity.<br>
+        <br>Your score will fluctuate the more you use MyndMap.
+      </div>
+    </div>
+    <div class="scale-container">
+      <svg width="100%" height="100%">
+        <!-- Horseshoe path -->
+        <path class="horseshoe" d="M 50 350 Q 250 -200 450 350" />
+
+        <!-- X and Y Axes -->
+        <line class="axis-line" x1="50" y1="350" x2="450" y2="350" />
+        <line class="axis-line" x1="250" y1="350" x2="250" y2="50" />
+
+        <!-- Axis Labels -->
+        <text class="axis-label" x="50" y="370">0</text>
+        <text class="axis-label" x="250" y="370">50</text>
+        <text class="axis-label" x="450" y="370">100</text>
+        <text class="axis-label" x="250" y="30" dy="-8">Severity of ADHD</text>
+
+        <!-- Categories -->
+        <text class="axis-label" x="50" y="380" dy="4">No Severity</text>
+        <text class="axis-label" x="450" y="380" dy="4">High Severity</text>
+        <text class="axis-label" x="250" y="390" text-anchor="middle">Moderate</text>
+      </svg>
+    </div>
+  </div>
+  <p class="beta-text">Beta Version 1.0</p>
+</body>
+</html>
