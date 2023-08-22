@@ -58,4 +58,22 @@ def adhd_ai_2():
 def results():
     return render_template('results.html')
 
+@views.route('/home')
+def dashboard():
+    return render_template('dashboard.html')
+
+@views.route('/calendar')
+def calendar_view():
+    return render_template('calendar.html')
+
+@views.route('/tasks')
+def tasks():
+    return render_template('tasks.html')
+
+
+@views.route('/settings')
+def settings():
+    return render_template('settings.html')
+
+
 

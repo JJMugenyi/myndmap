@@ -1,0 +1,63 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: cream;
+  color: #1a1a1a;
+  padding: 20px;
+}
+
+.dashboard {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h2 {
+  border-bottom: 2px solid #1a1a1a;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.task-card, .reminder, .goal {
+  background-color: #f7f7f7;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.progress-bar, .goal-progress-bar {
+  background-color: #e6e6e6;
+  border-radius: 4px;
+  height: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.progress-bar span, .goal-progress-bar span {
+  display: block;
+  height: 100%;
+  background-color: #1a1a1a;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #1a1a1a;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+@media (max-width: 600px) {
+  body {
+      padding: 10px;
+  }
+
+  h2 {
+      font-size: 18px;
+  }
+
+  .task-card, .reminder, .goal {
+      font-size: 14px;
+  }
+}

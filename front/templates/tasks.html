@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks - MyndMap Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+    <style>
+      body {
+            background-color: #f7e8d3;
+        }
+
+        #betaVersion {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: grey;
+        }
+
+        #sidebar {
+            background-color: #1a1a1a;
+            width: 250px; /* Fixed sidebar width */
+            min-height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #logo-image {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #userContainer {
+            background-color: #f7e8d3;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #userContainer img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .nav-link {
+            color: #1a1a1a;
+            background-color: #f7e8d3;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .nav-link.active {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar" class="d-flex flex-column p-3">
+            <!-- Logo placeholder -->
+            <div>
+                <img id="logo-image" src="{{ url_for('static', filename='images/logo/myndmap.png') }}" alt="Logo" />
+            </div>
+
+            <a class="nav-link active" href="/home"><i class="fas fa-home"></i> Home</a>
+            <a class="nav-link" href="/calendar"><i class="fas fa-calendar-alt"></i> Calendar</a>
+            <a class="nav-link" href="/tasks"><i class="fas fa-tasks"></i> Tasks</a>
+            <a class="nav-link mb-3" href="/settings"><i class="fas fa-cog"></i> Settings</a>
+            
+            <!-- User details -->
+            <div id="userContainer">
+                <p>Caitlin S.</p> <!-- Replace with user's name -->
+            </div>
+
+            <span id="betaVersion">Beta Version 1.0</span>
+        </div>
+
+        <!-- Main Content Area for Tasks -->
+        <div id="mainContent" class="flex-grow-1 p-3">
+            <h2>My Tasks</h2>
+            
+            <!-- Example of a task. You can loop through these based on data from your backend -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    Task Name: Task Title 1
+                </div>
+                <div class="card-body">
+                    <p><strong>Priority:</strong> High</p>
+                    <p><strong>Description:</strong> Task Description for Task 1.</p>
+                    <p><strong>Start Date:</strong> 01/01/2023</p>
+                    <p><strong>End Date:</strong> 05/01/2023</p>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="card-header">
+                  Task Name: Task Title 2
+              </div>
+              <div class="card-body">
+                  <p><strong>Priority:</strong> Low</p>
+                  <p><strong>Description:</strong> Task Description for Task 2.</p>
+                  <p><strong>Start Date:</strong> 03/01/2023</p>
+                  <p><strong>End Date:</strong> 09/01/2023</p>
+              </div>
+          </div>
+
+            
+            <!-- Repeat similar structure for other tasks -->
+
+        </div>
+    </div>
+    
+    <!-- Include necessary scripts, if any -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

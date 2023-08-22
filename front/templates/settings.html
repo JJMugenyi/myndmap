@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+        body {
+            background-color: #f7e8d3;
+        }
+
+        #betaVersion {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: grey;
+        }
+
+        #sidebar {
+            background-color: #1a1a1a;
+            width: 250px; /* Fixed sidebar width */
+            min-height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #logo-image {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #userContainer {
+            background-color: #f7e8d3;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #userContainer img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .nav-link {
+            color: #1a1a1a;
+            background-color: #f7e8d3;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .nav-link.active {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar" class="d-flex flex-column p-3">
+            <!-- Logo placeholder -->
+            <div>
+                <img id="logo-image" src="{{ url_for('static', filename='images/logo/myndmap.png') }}" alt="Logo" />
+            </div>
+
+            <a class="nav-link active" href="/home"><i class="fas fa-home"></i> Home</a>
+            <a class="nav-link" href="/calendar"><i class="fas fa-calendar-alt"></i> Calendar</a>
+            <a class="nav-link" href="/tasks"><i class="fas fa-tasks"></i> Tasks</a>
+            <a class="nav-link mb-3" href="/settings"><i class="fas fa-cog"></i> Settings</a>
+            
+            <div id="userContainer">
+                <p>Caitlin S.</p> <!-- Replace with user's name -->
+            </div>
+
+            <span id="betaVersion">Beta Version 1.0</span>
+        </div>
+
+<!-- Main Content Area -->
+<div class="container mt-4">
+  <!-- Profile Details -->
+  <h2 class="mb-4">Profile Details</h2>
+  <div class="card p-4 mb-4">
+      <p><strong>Name:</strong> Caitlin S.</p>
+      <p><strong>Email:</strong> caitlin@example.com</p>
+      <p><strong>Country:</strong> USA</p>
+      <p><strong>Age:</strong> 28</p>
+  </div>
+
+  <div class="row mb-4">
+    <!-- ADHD Assessment Score -->
+    <div class="col-md-6">
+        <h2>ADHD Assessment Score</h2>
+        <div class="card p-4">
+            <p class="text-center">
+                <span style="font-size: 48px; font-weight: bold;">85</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Current Plan -->
+    <div class="col-md-6">
+        <h2>Current Plan</h2>
+        <div class="card p-4">
+            <p><i class="fas fa-check-circle text-success"></i> Basic</p>
+            <p class="text-muted"><i class="fas fa-lock"></i> Pro</p>
+            <p class="text-muted"><i class="fas fa-lock"></i> Elite</p>
+        </div>
+    </div>
+</div>
+
+
+  <!-- Logout Button -->
+  <a href="/" class="btn btn-danger">Logout</a>
+</div>
+
+<!-- Include Bootstrap JS and other necessary scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function activateLink(el) {
+            // Remove active class from all links
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => link.classList.remove('active'));
+
+            // Add active class to the clicked link
+            el.classList.add('active');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- If you have a custom JavaScript file, ensure you link it below -->
+    <script src="app.js"></script>
+</body>
+
+</html>

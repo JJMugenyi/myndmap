@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- FullCalendar CSS -->
+<link href='https://fullcalendar.io/releases/fullcalendar/4.2.0/core/main.css' rel='stylesheet' />
+<link href='https://fullcalendar.io/releases/fullcalendar/4.2.0/timeline/main.css' rel='stylesheet' />
+
+<!-- FullCalendar JS and its plugins -->
+<script src='https://fullcalendar.io/releases/fullcalendar/4.2.0/core/main.js'></script>
+<script src='https://fullcalendar.io/releases/fullcalendar/4.2.0/timeline/main.js'></script>
+
+
+    <style>
+        body {
+            background-color: #f7e8d3;
+        }
+
+        #betaVersion {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: grey;
+        }
+
+        #sidebar {
+            background-color: #1a1a1a;
+            width: 250px; /* Fixed sidebar width */
+            min-height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #logo-image {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #userContainer {
+            background-color: #f7e8d3;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #userContainer img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .nav-link {
+            color: #1a1a1a;
+            background-color: #f7e8d3;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .nav-link.active {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar" class="d-flex flex-column p-3">
+            <!-- Logo placeholder -->
+            <div>
+                <img id="logo-image" src="{{ url_for('static', filename='images/logo/myndmap.png') }}" alt="Logo" />
+            </div>
+
+            <a class="nav-link active" href="/home"><i class="fas fa-home"></i> Home</a>
+            <a class="nav-link" href="/calendar"><i class="fas fa-calendar-alt"></i> Calendar</a>
+            <a class="nav-link" href="/tasks"><i class="fas fa-tasks"></i> Tasks</a>
+            <a class="nav-link mb-3" href="/settings"><i class="fas fa-cog"></i> Settings</a>
+            
+            <div id="userContainer">
+                <p>Caitlin S.</p> <!-- Replace with user's name -->
+            </div>
+
+            <span id="betaVersion">Beta Version 1.0</span>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <main class="container my-5 ml-lg-5">
+            <!-- Stats Row -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded shadow-sm">
+                        <h4>Tasks Completed</h4>
+                        <h2>56</h2>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded shadow-sm">
+                        <h4>Active Projects</h4>
+                        <h2>4</h2>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded shadow-sm">
+                        <h4>Overdue Tasks</h4>
+                        <h2>3</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="p-4 bg-white rounded shadow-sm">
+                        <h4>Task Progress</h4>
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-4 bg-white rounded shadow-sm">
+                        <h4>Monthly Productivity</h4>
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            
+
+    <script>
+        function activateLink(el) {
+            // Remove active class from all links
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => link.classList.remove('active'));
+
+            // Add active class to the clicked link
+            el.classList.add('active');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- If you have a custom JavaScript file, ensure you link it below -->
+    <script src="app.js"></script>
+</body>
+
+</html>
