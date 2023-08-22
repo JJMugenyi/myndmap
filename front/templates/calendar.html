@@ -13,84 +13,378 @@
 <!-- FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+<link href='https://fullcalendar.io/releases/fullcalendar/4.0.0-alpha.4/fullcalendar.min.css' rel='stylesheet' />
+<script src='https://fullcalendar.io/releases/fullcalendar/4.0.0-alpha.4/lib/jquery.min.js'></script>
+<script src='https://fullcalendar.io/releases/fullcalendar/4.0.0-alpha.4/fullcalendar.min.js'></script>
 
-    <style>
-        body {
-            background-color: #f7e8d3;
-        }
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        #betaVersion {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            color: grey;
-        }
+<!-- FullCalendar stylesheet -->
+<link href='https://fullcalendar.io/releases/fullcalendar/3.9.0/fullcalendar.min.css' rel='stylesheet' />
 
-        #sidebar {
-            background-color: #1a1a1a;
-            width: 250px; /* Fixed sidebar width */
-            min-height: 100vh;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
+<!-- FullCalendar dependent library -->
+<script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/moment.min.js'></script>
 
-        #logo-image {
-            width: 100%;
-            margin-bottom: 20px;
-        }
+<!-- FullCalendar script -->
+<script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/fullcalendar.min.js'></script>
 
-        #userContainer {
-            background-color: #f7e8d3;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-            margin: 20px 0;
-        }
 
-        #userContainer img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
 
-        .nav-link {
-            color: #1a1a1a;
-            background-color: #f7e8d3;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
+<style>
+    body {
+        background-color: #f7e8d3;
+    }
 
-        .nav-link.active {
-            font-weight: bold;
-        }
-    </style>
-</head>
+    #navbar {
+        font-family: 'Arial', sans-serif;
+        background-color: #1a1a1a;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-<body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <div id="sidebar" class="d-flex flex-column p-3">
-            <!-- Logo placeholder -->
-            <div>
-                <img id="logo-image" src="{{ url_for('static', filename='images/logo/myndmap.png') }}" alt="Logo" />
-            </div>
+    #navbar .nav-links {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        align-items: center;
+        flex: 1; 
+        justify-content: space-evenly; /* This will evenly distribute the remaining 3 buttons */
+    }
 
-            <a class="nav-link active" href="/home"><i class="fas fa-home"></i> Home</a>
-            <a class="nav-link" href="/calendar"><i class="fas fa-calendar-alt"></i> Calendar</a>
-            <a class="nav-link" href="/tasks"><i class="fas fa-tasks"></i> Tasks</a>
-            <a class="nav-link mb-3" href="/settings"><i class="fas fa-cog"></i> Settings</a>
-            
-            <div id="userContainer">
-                <p>Caitlin S.</p> <!-- Replace with user's name -->
-            </div>
+    #navbar a {
+        text-decoration: none;
+        color: #f7e8d3;
+        margin: 0 15px;
+        position: relative;
+        padding-bottom: 5px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
 
-            <span id="betaVersion">Beta Version 1.0</span>
+    #navbar a i {
+        margin-right: 5px;
+    }
+
+    #navbar a.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #f7e8d3;
+    }
+
+    #logo-image {
+        height: 40px;
+        margin-right: 5px;
+    }
+
+    /* User Icon and Dropdown styles */
+    #userIcon {
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        color: grey;
+        padding: 0 10px;
+    }
+
+    #userDropdown {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background-color: #1a1a1a;
+        color: #f7e8d3;
+        border: 1px solid #f7e8d3;
+        border-radius: 5px;
+        z-index: 10;
+    }
+
+    #userDropdown a {
+        font-family: 'Arial', sans-serif;
+        display: block;
+        padding: 10px;
+        color: #f7e8d3;
+        font-size: 14px;
+        text-decoration: none; /* Match the font style */
+    }
+
+    #userDropdown a:hover {
+        background-color: #333;
+    }
+
+    /* Add style for "beta version 1.0" text */
+    #userDropdown .beta-version {
+        font-family: 'Arial', sans-serif;
+        padding: 10px;
+        font-size: 12px;
+        color: grey; /* Light grey color as you mentioned */
+        text-align: center;
+    }
+
+    .fc-widget-content {
+        border-color: #1A1A1A;
+    }
+    .fc-slats .fc-minor {
+        border-color: #1A1A1A;
+    }
+
+</style>
+
+<div id="navbar">
+    <img id="logo-image" src="{{ url_for('static', filename='images/logo/myndmap.png') }}" alt="Logo" />
+
+    <div class="nav-links">
+        <a href="/home">Home</a>
+        <a class="active" href="/calendar">Calendar</a>
+        <a href="/tasks">My Tasks</a>
+    </div>
+
+    <!-- User Icon and Dropdown -->
+    <div id="userIcon" class="fas fa-user">
+        <div id="userDropdown">
+            <div class="beta-version">Beta Version 1.0</div> <!-- Added this line -->
+            <a href="#">Caitlin S.</a>
+            <a href="/">Log Out</a>
+            <a href="/settings">Settings</a>
         </div>
+    </div>
+</div>
 
- 
+<div id="calendar">
 
-            
+
+
+</div>
+
+
+<script>
+
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'year,month,agendaWeek,agendaDay'
+        },
+        customButtons: {
+    year: {
+        text: 'year',
+        click: function() {
+            $('#calendar').fullCalendar('changeView', 'listYear');
+        }
+    }},
+        selectable: true,
+        selectHelper: true,
+        select: function(start, end) {
+            var title = prompt('Event Title:');
+            var eventData;
+            if (title) {
+                eventData = {
+                    title: title,
+                    start: start,
+                    end: end
+                };
+                $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+            }
+            $('#calendar').fullCalendar('unselect');
+        },
+        editable: true,
+        eventLimit: true, // allow "more" link when too many events
+        events: [
+    {
+        title: 'Birthday',
+        start: '2023-01-10'
+    },
+    {
+        title: 'New Year Celebration',
+        start: '2023-01-01'
+    },
+    {
+        title: 'Valentine\'s Day',
+        start: '2023-02-14'
+    },
+    {
+        title: 'Project Kickoff',
+        start: '2023-03-05'
+    },
+    {
+        title: 'Easter Celebration',
+        start: '2023-04-09'
+    },
+    {
+        title: 'Workshop',
+        start: '2023-05-15'
+    },
+    {
+        title: 'Conference',
+        start: '2023-06-03'
+    },
+    {
+        title: 'Summer Party',
+        start: '2023-07-20'
+    },
+    {
+        title: 'Coursework Due',
+        start: '2023-08-05'
+    },
+    {
+        title: 'Driving Lesson',
+        start: '2023-08-11'
+    },
+    {
+        title: 'Family Reunion',
+        start: '2023-09-12'
+    },
+    {
+        title: 'Anniversary',
+        start: '2023-10-04'
+    },
+    {
+        title: 'Halloween Party',
+        start: '2023-10-31'
+    },
+    {
+        title: 'Project Deadline',
+        start: '2023-11-18'
+    },
+    {
+        title: 'Thanksgiving',
+        start: '2023-11-23'
+    },
+    {
+        title: 'Christmas Eve',
+        start: '2023-12-24'
+    },
+    {
+        title: 'Christmas Day',
+        start: '2023-12-25'
+    },
+    {
+        title: 'New Year\'s Eve',
+        start: '2023-12-31'
+    },
+    {
+        title: 'Team Outing',
+        start: '2023-09-28'
+    },
+    {
+        title: 'Quarterly Review',
+        start: '2023-12-12'
+    },
+
+    {
+    title: 'Winter Retreat',
+    start: '2024-01-07'
+    },
+    {
+        title: 'Ski Trip',
+        start: '2024-01-15'
+    },
+    {
+        title: 'Valentine\'s Dinner',
+        start: '2024-02-14'
+    },
+    {
+        title: 'Spring Break',
+        start: '2024-03-10'
+    },
+    {
+        title: 'Tax Day',
+        start: '2024-04-15'
+    },
+    {
+        title: 'Picnic',
+        start: '2024-05-22'
+    },
+    {
+        title: 'Music Festival',
+        start: '2024-06-08'
+    },
+    {
+        title: 'Beach Day',
+        start: '2024-07-04'
+    },
+    {
+        title: 'Camping Trip',
+        start: '2024-07-19'
+    },
+    {
+        title: 'Olympic Games Start',
+        start: '2024-07-26'
+    },
+    {
+        title: 'Olympic Games End',
+        start: '2024-08-11'
+    },
+    {
+        title: 'Back to School',
+        start: '2024-09-05'
+    },
+    {
+        title: 'Autumn Hike',
+        start: '2024-10-12'
+    },
+    {
+        title: 'Halloween Bash',
+        start: '2024-10-31'
+    },
+    {
+        title: 'Thanksgiving Feast',
+        start: '2024-11-28'
+    },
+    {
+        title: 'Winter Workshop',
+        start: '2024-12-07'
+    },
+    {
+        title: 'Office Party',
+        start: '2024-12-20'
+    },
+    {
+        title: 'Christmas Celebration',
+        start: '2024-12-25'
+    },
+    {
+        title: 'New Year\'s Eve Bash',
+        start: '2024-12-31'
+    },
+    {
+        title: 'Safari Adventure',
+        start: '2024-06-16'
+    }
+
+    ],
+        eventClick: function(event, jsEvent, view) {
+            alert('Event: ' + event.title);
+            // You can also use other popups or modals here for more details or event editing
+            }
+        });
+    });
+    
+    const userIcon = document.getElementById('userIcon');
+    const userDropdown = document.getElementById('userDropdown');
+
+    userIcon.addEventListener('click', () => {
+        if (userDropdown.style.display === 'none' || !userDropdown.style.display) {
+            userDropdown.style.display = 'block';
+        } else {
+            userDropdown.style.display = 'none';
+        }
+    });
+
+    window.addEventListener('click', (event) => {
+        if (!userIcon.contains(event.target)) {
+            userDropdown.style.display = 'none';
+        }
+    });
+</script>
+    
 
     <script>
         function activateLink(el) {

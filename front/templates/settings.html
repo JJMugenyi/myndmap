@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Settings</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- Animate.css -->
@@ -14,79 +14,123 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
-    <style>
-        body {
-            background-color: #f7e8d3;
-        }
+<style>
+    body {
+        background-color: #f7e8d3;
+    }
 
-        #betaVersion {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            color: grey;
-        }
+    #navbar {
+        font-family: 'Arial', sans-serif;
+        background-color: #1a1a1a;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-        #sidebar {
-            background-color: #1a1a1a;
-            width: 250px; /* Fixed sidebar width */
-            min-height: 100vh;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
+    #navbar .nav-links {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        align-items: center;
+        flex: 1; 
+        justify-content: space-evenly; /* This will evenly distribute the remaining 3 buttons */
+    }
 
-        #logo-image {
-            width: 100%;
-            margin-bottom: 20px;
-        }
+    #navbar a {
+        text-decoration: none;
+        color: #f7e8d3;
+        margin: 0 15px;
+        position: relative;
+        padding-bottom: 5px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
 
-        #userContainer {
-            background-color: #f7e8d3;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-            margin: 20px 0;
-        }
+    #navbar a i {
+        margin-right: 5px;
+    }
 
-        #userContainer img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
+    #navbar a.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #f7e8d3;
+    }
 
-        .nav-link {
-            color: #1a1a1a;
-            background-color: #f7e8d3;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
+    #logo-image {
+        height: 40px;
+        margin-right: 5px;
+    }
 
-        .nav-link.active {
-            font-weight: bold;
-        }
-    </style>
-</head>
+    /* User Icon and Dropdown styles */
+    #userIcon {
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        color: grey;
+        padding: 0 10px;
+    }
 
-<body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <div id="sidebar" class="d-flex flex-column p-3">
-            <!-- Logo placeholder -->
-            <div>
-                <img id="logo-image" src="{{ url_for('static', filename='images/logo/myndmap.png') }}" alt="Logo" />
-            </div>
+    #userDropdown {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background-color: #1a1a1a;
+        color: #f7e8d3;
+        border: 1px solid #f7e8d3;
+        border-radius: 5px;
+        z-index: 10;
+    }
 
-            <a class="nav-link active" href="/home"><i class="fas fa-home"></i> Home</a>
-            <a class="nav-link" href="/calendar"><i class="fas fa-calendar-alt"></i> Calendar</a>
-            <a class="nav-link" href="/tasks"><i class="fas fa-tasks"></i> Tasks</a>
-            <a class="nav-link mb-3" href="/settings"><i class="fas fa-cog"></i> Settings</a>
-            
-            <div id="userContainer">
-                <p>Caitlin S.</p> <!-- Replace with user's name -->
-            </div>
+    #userDropdown a {
+        font-family: 'Arial', sans-serif;
+        display: block;
+        padding: 10px;
+        color: #f7e8d3;
+        font-size: 14px;
+        text-decoration: none; /* Match the font style */
+    }
 
-            <span id="betaVersion">Beta Version 1.0</span>
+    #userDropdown a:hover {
+        background-color: #333;
+    }
+
+    /* Add style for "beta version 1.0" text */
+    #userDropdown .beta-version {
+        font-family: 'Arial', sans-serif;
+        padding: 10px;
+        font-size: 12px;
+        color: grey; /* Light grey color as you mentioned */
+        text-align: center;
+    }
+
+</style>
+
+<div id="navbar">
+    <img id="logo-image" src="{{ url_for('static', filename='images/logo/myndmap.png') }}" alt="Logo" />
+
+    <div class="nav-links">
+        <a href="/home">Home</a>
+        <a href="/calendar">Calendar</a>
+        <a href="/tasks">My Tasks</a>
+    </div>
+
+    <!-- User Icon and Dropdown -->
+    <div id="userIcon" class="fas fa-user">
+        <div id="userDropdown">
+            <div class="beta-version">Beta Version 1.0</div> <!-- Added this line -->
+            <a href="#">Caitlin S.</a>
+            <a href="/">Log Out</a>
+            <a href="/settings">Settings</a>
         </div>
+    </div>
+</div>
 
 <!-- Main Content Area -->
 <div class="container mt-4">
@@ -131,16 +175,24 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-        function activateLink(el) {
-            // Remove active class from all links
-            const links = document.querySelectorAll('.nav-link');
-            links.forEach(link => link.classList.remove('active'));
+<script>
+    const userIcon = document.getElementById('userIcon');
+    const userDropdown = document.getElementById('userDropdown');
 
-            // Add active class to the clicked link
-            el.classList.add('active');
+    userIcon.addEventListener('click', () => {
+        if (userDropdown.style.display === 'none' || !userDropdown.style.display) {
+            userDropdown.style.display = 'block';
+        } else {
+            userDropdown.style.display = 'none';
         }
-    </script>
+    });
+
+    window.addEventListener('click', (event) => {
+        if (!userIcon.contains(event.target)) {
+            userDropdown.style.display = 'none';
+        }
+    });
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- If you have a custom JavaScript file, ensure you link it below -->
