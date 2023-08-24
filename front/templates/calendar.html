@@ -33,7 +33,7 @@
 
 <style>
     body {
-        background-color: #f7e8d3;
+        background-color: #232222;
     }
 
     #navbar {
@@ -128,12 +128,48 @@
     }
 
     .fc-widget-content {
-        border-color: #1A1A1A;
+        border-color: #f7e8d3;
     }
     .fc-slats .fc-minor {
-        border-color: #1A1A1A;
+        border-color: #f7e8d3;
     }
 
+    /* Change the background color of the calendar */
+    .fc-view-harness {
+    background-color: #f7e8d3;
+    }
+
+/* Change the background color of the headers */
+    .fc-col-header-cell {
+    background-color: #f7e8d3;
+    color: #f7e8d3;
+    }
+
+    .fc-toolbar {
+    
+    color: #f7e8d3; /* Optional: change text color */
+    }
+
+    .fc-day-header {
+    color: #f7e8d3; /* Optional: change text color */
+    }
+
+    .fc-day-number {
+    color: #f7e8d3;
+    }
+
+    /* Change the background color for 'today' */
+    .fc-today {
+    background-color: #000000 !important;
+    }
+
+    .fc-list-item {
+    background-color: #f7e8d3 !important;
+    }
+
+    .fc-time {
+    color: #f7e8d3 !important;
+    }
 </style>
 
 <div id="navbar">
@@ -361,11 +397,13 @@ $(document).ready(function() {
 
     ],
         eventClick: function(event, jsEvent, view) {
-            alert('Event: ' + event.title);
-            // You can also use other popups or modals here for more details or event editing
-            }
+        console.log('Clicked date:', event.start); // Log the event date
+        alert('Event: ' + event.title);
+        
+        }
         });
     });
+    
     
     const userIcon = document.getElementById('userIcon');
     const userDropdown = document.getElementById('userDropdown');
